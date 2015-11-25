@@ -45,7 +45,6 @@ Experimental subset: mice that remained naïve to either fatty acid or vehicle c
 
 
 2)	Marginal regression
-Stata 
 	xtset mouseid
 	xtgee somasize pten, corr(exch) robust
 
@@ -61,7 +60,6 @@ Stata code corresponding to Table 5
 Experimental subset: mice that remained naïve to either fatty acid or vehicle control delivery (fattyacid = 0)
 
 1)	Mouse-level weighted regression 
-Stata
 	reg meanss prp [w=numobs]
 
 2)	Marginal regression
