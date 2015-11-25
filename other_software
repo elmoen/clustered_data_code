@@ -1,0 +1,20 @@
+Analysis in R
+library(lme4)
+  lmer function
+  mixed-effect model
+
+library(plm)
+  plm function
+  fixed-effect and random-effect model, specified with "model" command
+  
+library(gee)
+  gee function
+  marginal model
+  
+  
+Analysis in Matlab
+fitlme function
+  mixed-effect model
+  
+
+Analysis in SAS
