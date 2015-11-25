@@ -1,0 +1,94 @@
+Stata code for statistical models described in the main text
+
+Key
+Variable names:
+somasize = continuous variable of soma size for each neuron
+fattyacid = factor of 0, 1, or 2 indicating no treatment, fatty acid treatment, or vehicle control, respectively
+pten = factor of 0 or 1 indicating control or Pten shRNA, respectively
+mouseid = factor specifying mouse identity for each neuron
+meanss = mean soma size
+prp = proportion of cells with Pten knockdown per mouse
+numobs = number of neuron measurements per mouse
+
+
+
+Code corresponding to Table 3
+Experimental subset: control neurons from mice that received fatty acid or vehicle control delivery (pten = 0 and fattyacid = 1 or 2)
+
+1)	Cell-level linear regression
+	reg somasize fattyacid 
+
+
+2)	Mouse-level regression (mean); no weighting
+	reg meanss fattyacid 
+
+
+3)	Mouse-level regression (mean); weighting – analytic weights
+reg meanss fattyacid [w=numobs]
+
+4)	Marginal regression
+	#First set mouseid as the panel variable (cluster identities), then perform the regression
+	xtset mouseid
+	xtgee somasize fattyacid, corr(exch) robust
+
+5)	Mixed-effect regression 
+	#Use of “variance robust” obtains variance estimates that are robust to violations of the distribution assumption due to misspecification of the model
+	xtset mouseid
+	xtmixed somasize pten || mouseid:, variance robust cov(exch)
+
+
+Stata code corresponding to Table 4
+Experimental subset: mice that remained naïve to either fatty acid or vehicle control delivery (fattyacid = 0)
+
+1)	Cell-level linear regression
+	reg somasize pten 
+
+
+2)	Marginal regression
+Stata 
+	xtset mouseid
+	xtgee somasize pten, corr(exch) robust
+
+3)	Fixed-effect regression 
+	xtset mouseid
+	xtreg somasize pten, fe
+
+4)	Mixed-effect regression 
+	xtset mouseid
+	xtmixed somasize pten || mouseid:, variance robust cov(exch)
+
+Stata code corresponding to Table 5
+Experimental subset: mice that remained naïve to either fatty acid or vehicle control delivery (fattyacid = 0)
+
+1)	Mouse-level weighted regression 
+Stata
+	reg meanss prp [w=numobs]
+
+2)	Marginal regression
+	xtset mouseid
+	xtgee somasize prp pten, corr(exch) robust
+
+3)	Mixed-effect regression
+	xtset mouseid
+	xtmixed somasize prp ||mouseid:, variance robust cov(exch)
+
+4)	Mixed-effect regression with pten as a fixed effect
+	xtset mouseid
+	xtmixed somasize prp pten || mouseid:, variance robust cov(exch)
+
+Stata code corresponding to Table 6
+Experimental subset: mice that were in the fatty acid and vehicle control groups (fattyacid = 1 or 2).
+
+1)	Interaction effect between Pten knockdown and fatty acid delivery
+	#Set mouseid as panel variable, generate vectors of interaction effects, and then perform the regression 
+	xtset mouseid
+	gen fa1_pten=(fattyacid==1)*pten
+	gen fa2_pten=(fattyacid==2)*pten
+	xtmixed somasize pten fattyacid fa1_pten fa2_pten mouseid:, variance robust cov(exch)
+
+Intra-class correlation (ICC)
+#After performing the mixed-effect model with the ‘xtmixed’ command, you can calculate the ICC of your data with the following command:
+
+	estat icc
+
+
