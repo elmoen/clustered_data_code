@@ -1,20 +1,32 @@
 Analysis in R
-library(lme4)
-  lmer function
-  mixed-effect model
-
-library(plm)
-  plm function
-  fixed-effect and random-effect model, specified with "model" command
+  library(gee)
+    gee function
+    marginal model
   
-library(gee)
-  gee function
-  marginal model
+  library(plm)
+    plm function
+    fixed-effect and random-effect model, specified with "model" command
+  
+  library(lme4)
+    lmer function
+    mixed-effect model
   
   
 Analysis in Matlab
-fitlme function
-  mixed-effect model
+  GEEQBOX toolbox
+    marginal model. see more at http://www.jstatsoft.org/article/view/v025i14
   
+  fitlme function
+    mixed-effect model
+
+
 
 Analysis in SAS
+  PROC GENMODE
+    marginal model
+
+  PROC GLM
+    fixed-effect model, mixed-effect model with specification of RANDOM statement
+  
+  PROC MIXED
+    mixed-effect model
