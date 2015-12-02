@@ -24,7 +24,7 @@ Experimental subset: control neurons from mice that received fatty acid or vehic
 
 
 3)	Mouse-level regression (mean); weighting – analytic weights
-reg meanss fattyacid [w=numobs]
+	reg meanss fattyacid [w=numobs]
 
 4)	Marginal regression
 	#First set mouseid as the panel variable (cluster identities), then perform the regression
