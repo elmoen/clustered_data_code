@@ -24,12 +24,12 @@ Analysis in Matlab
   
 Analysis in SAS
   PROC GENMOD
-    marginal model
+    marginal model, use class statement to identify the cluster variable as categorical and the repeated command to specify that multiple observations are made on that variable
 
   PROC GLM
-    fixed-effect model, use class statement to identify a variable as categorical and list variable as per normal in the model statement
+    fixed-effect model, use class statement to identify the cluster variable as categorical and list variable as per normal in the model statement
   
   PRsOC MIXED
-    mixed-effect model, use class statement to identify the cluster variable as a categorical variable and the RANDOM sub-command to indicate that its effects are treated as random
+    mixed-effect model, use class statement to identify the cluster variable as categorical and the RANDOM sub-command to indicate that its effects are treated as random
     
 Note: these packages and functions were not specifically implemented in our manuscript. Rather, this serves as a starting point for a reseracher who prefers using a statistical software other than Stata. Each of these functions contain addition options and outputs that the software will provide.
