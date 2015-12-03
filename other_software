@@ -16,8 +16,8 @@ Analysis in R
 Analysis in Matlab
 
   fitlm function
-  For fixed-effects, the user would need to implement the variable with the cluster indicators as a series of dummy variables for each level.
-
+  For fixed-effects, the user may use the categorical function before running fitlm to inform Matlab that seperate coefficients are to be estimated for each level of the cluster variable
+  
   GEEQBOX toolbox
     marginal model, the cluster variable is specified with the id input in the model statement.
     GEEQBOX is not part of the statistical module of Matlab but is a user-contributed package: see more at http://www.jstatsoft.org/article/view/v025i14
