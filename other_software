@@ -15,24 +15,21 @@ Analysis in R
 Analysis in Matlab
   GEEQBOX toolbox
     marginal model. see more at http://www.jstatsoft.org/article/view/v025i14
-
-  fit glme function
-    fixed-effect model, mixed-effect model
   
   fitlme function
     mixed-effect model
 
-
+  fitlm function
+  For fixed-effects, the user would need to implement the variable with the cluster indicators as a series of dummy variables for each level.
+  
 Analysis in SAS
-  PROC GENMODE
+  PROC GENMOD
     marginal model
 
   PROC GLM
-    fixed-effect model, mixed-effect model with specification of RANDOM statement
+    fixed-effect model, use class statement to identify a variable as categorical and list variable as per normal in the model statement
   
-  PROC MIXED
-    mixed-effect model
+  PRsOC MIXED
+    mixed-effect model, use class statement to identify the cluster variable as a categorical variable and the RANDOM sub-command to indicate that its effects are treated as random
     
-    
-    
-Note: these packages and functions were not specifically implemented in our manuscript. Rather, this serves as a starting point for a reseracher who prefers using a statistical software other than Stata.
+Note: these packages and functions were not specifically implemented in our manuscript. Rather, this serves as a starting point for a reseracher who prefers using a statistical software other than Stata. Each of these functions contain addition options and outputs that the software will provide.
