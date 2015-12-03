@@ -4,8 +4,8 @@ Analysis in R
     marginal model
   
   library(plm)
-    plm function
-    fixed-effect and random-effect model, specified with "model" command
+    lm function
+    fixed-effect model, specify clusters using factor command (e.g., use factor(mouseid) for example dataset)
   
   library(lme4)
     lmer function
