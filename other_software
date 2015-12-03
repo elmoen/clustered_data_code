@@ -1,34 +1,38 @@
 Analysis in R
+  lm function
+  fixed-effect model, specify clusters using factor command (e.g., factor(mouseid))
+  
   library(gee)
     gee function
-    marginal model
-  
-  library(plm)
-    lm function
-    fixed-effect model, specify clusters using factor command (e.g., use factor(mouseid) for example dataset)
+    marginal model, specify clusters with the id sub-command in the model statment (e.g., id=mouseid)
+    The gee package is a user-contributed package: see more athttps://cran.r-project.org/web/packages/gee/index.html
   
   library(lme4)
-    lmer function
+    lmer function, for basic clustering the notation of (1|mouseid) in the model statement is used to specify that observations are clustered within the 'mouseid' variable.
     mixed-effect model
+    The lme4 package is a user-contributed package: https://cran.r-project.org/web/packages/lme4/index.html
   
   
 Analysis in Matlab
-  GEEQBOX toolbox
-    marginal model. see more at http://www.jstatsoft.org/article/view/v025i14
-  
-  fitlme function
-    mixed-effect model
 
   fitlm function
   For fixed-effects, the user would need to implement the variable with the cluster indicators as a series of dummy variables for each level.
+
+  GEEQBOX toolbox
+    marginal model, the cluster variable is specified with the id input in the model statement.
+    GEEQBOX is not part of the statistical module of Matlab but is a user-contributed package: see more at http://www.jstatsoft.org/article/view/v025i14
   
+  fitlme function
+    mixed-effect model, for basic clustering the notation of (1|mouseid) in the model statement is used to specify that observations are clustered within the 'mouseid' variable.
+
+
 Analysis in SAS
+  PROC GLM
+    fixed-effect model, use class statement to identify the cluster variable as categorical and list variable as per normal in the model statement
+
   PROC GENMOD
     marginal model, use class statement to identify the cluster variable as categorical and the repeated command to specify that multiple observations are made on that variable
 
-  PROC GLM
-    fixed-effect model, use class statement to identify the cluster variable as categorical and list variable as per normal in the model statement
-  
   PRsOC MIXED
     mixed-effect model, use class statement to identify the cluster variable as categorical and the RANDOM sub-command to indicate that its effects are treated as random
     
