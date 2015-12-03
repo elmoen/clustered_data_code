@@ -5,7 +5,7 @@ Analysis in R
   library(gee)
     gee function
     marginal model, specify clusters with the id sub-command in the model statment (e.g., id=mouseid)
-    The gee package is a user-contributed package: see more athttps://cran.r-project.org/web/packages/gee/index.html
+    The gee package is a user-contributed package: https://cran.r-project.org/web/packages/gee/index.html
   
   library(lme4)
     lmer function, for basic clustering the notation of (1|mouseid) in the model statement is used to specify that observations are clustered within the 'mouseid' variable.
