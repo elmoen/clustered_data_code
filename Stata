@@ -82,7 +82,7 @@ Experimental subset: mice that were in the fatty acid and vehicle control groups
 	xtset mouseid
 	gen fa1_pten=(fattyacid==1)*pten
 	gen fa2_pten=(fattyacid==2)*pten
-	xtmixed somasize pten fattyacid fa1_pten fa2_pten mouseid:, variance robust cov(exch)
+	xtmixed somasize pten fattyacid fa1_pten fa2_pten || mouseid:, variance robust cov(exch)
 
 Intra-class correlation (ICC)
 #After performing the mixed-effect model with the ‘xtmixed’ command, you can calculate the ICC of your data with the following command:
