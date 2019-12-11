@@ -34,7 +34,7 @@ Experimental subset: control neurons from mice that received fatty acid or vehic
 5)	Mixed-effect regression 
 	#Use of “variance robust” obtains variance estimates that are robust to violations of the distribution assumption due to misspecification of the model
 	xtset mouseid
-	xtmixed somasize pten || mouseid:, variance robust cov(exch)
+	xtmixed somasize fattyacid || mouseid:, variance robust cov(exch)
 
 
 Stata code corresponding to Table 4
