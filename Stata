@@ -3,7 +3,7 @@ Stata code for statistical models described in the main text
 Key
 Variable names:
 somasize = continuous variable of soma size for each neuron
-fattyacid = factor of 0, 1, or 2 indicating no treatment, fatty acid treatment, or vehicle control, respectively
+fattyacid = factor of 0, 1, or 2 indicating no treatment, vehicle control, or fatty acid treatment respectively
 pten = factor of 0 or 1 indicating control or Pten shRNA, respectively
 mouseid = factor specifying mouse identity for each neuron
 meanss = mean soma size
